@@ -16,6 +16,7 @@ $ enter / enter
 $ w (write)
 
 - 만약 xfs타입이아니라면 다른방법으로 파일시스템 만들 것 (ex. ext4)
+
 $ mkfs.xfs -f /dev/{device-name}
 ```
 ##### - 마운트
@@ -27,8 +28,14 @@ $ vi /etc/fstab
 ##### - docker daemon.json 수정
 ```
 - 필요 시 각 워커노드,GPU노드에서 수행
-$ vi /etc/docker/daemon.json
-    "data-root": "디렉토리명",   << 추가
+
+$ vi /etc/docker/daemon.json에 추가
+
+    "data-root": "디렉토리명",   
+    "storage-opts": [
+      "overlay2.override_kernel_check=true",
+      "overlay2.size=5G"
+    ]
 ```
 ##### - grub 수정 및 리부트
 ```
