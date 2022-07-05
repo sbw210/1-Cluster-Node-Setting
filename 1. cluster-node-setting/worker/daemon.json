@@ -1,0 +1,9 @@
+{
+    "insecure-registries": ["ehost-repo.xyz"],
+    "storage-driver": "overlay2",
+    "data-root": "/docker-volume",
+    "storage-opts": [
+      "overlay2.override_kernel_check=true",
+      "overlay2.size=5G"
+    ]
+}
