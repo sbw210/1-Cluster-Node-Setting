@@ -1,4 +1,4 @@
-# Cluster-Node-Setting
+# [ Cluster-Node-Setting ]
 
 ### * Cluster Node 설정
 ---
