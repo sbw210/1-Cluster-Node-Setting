@@ -16,7 +16,7 @@
 ---
 ### * Ceph-CSI
 ---
-##### 
+##### - 참조: https://github.com/sbw210/ceph-csi
 ---
 ### * NFS-Client
 ---
