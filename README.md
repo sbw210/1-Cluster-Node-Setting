@@ -16,3 +16,32 @@
 ---
 #### Ceph-CSI
 ---
+
+---
+#### NFS-Client
+---
+##### NFS Client Package Install
+```
+$ yum -y install nfs-utils libnfsdimap
+$ systemctl enable rpcbind
+$ systemctl start rpcbind
+```
+##### Check communication with NFS Server 
+```
+$ showmount -e {NFS Server IP}
+```
+##### Mount NFS Volume
+```
+$ mkdir -p /{Dir Name}
+$ mount {NFS Server IP}:/{Dir Name} {Dir Name}
+```
+##### Check Mount Status
+```
+mount | grep {Dir Name}
+```
+##### mount permanently
+```
+$ vi /etc/fstab
+{NFS Server IP}:/{Dir Name} {Dir Name}  nfs   rw,sync,hard,intr   0 0
+```
+
