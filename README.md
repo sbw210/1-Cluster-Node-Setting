@@ -6,6 +6,7 @@
 - Worker와 GPU의 docker daemon.json 파일 형태 다름
 - data-transfer용 노드 라벨링 (taint 설정 추가필요)
 - gpu용 노드 라벨링
+- docker volume의 root dir 설정 변경
 ---
 #### Hide Process 
 ---
