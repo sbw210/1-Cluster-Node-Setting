@@ -1,5 +1,6 @@
 {
   "insecure-registries": ["ehost-repo.xyz"], 
+  "exec-opts": ["native.cgroupdriver=systemd"],
   "data-root": "/docker-volume",
   "storage-driver": "overlay2",
   "storage-opts": [
