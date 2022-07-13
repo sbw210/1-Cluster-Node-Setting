@@ -26,24 +26,36 @@ $ vi /etc/fstab
 /dev/{device-name}  {dir-name}  xfs   defaults,pquota 0 0
 ```
 ##### - docker daemon.json 수정
+
+###### - 필요 시 각 워커노드,GPU노드에서 수행
+###### $ vi /etc/docker/daemon.json 수정
+###### (1) Worker
 ```
-- 필요 시 각 워커노드,GPU노드에서 수행
-
-$ vi /etc/docker/daemon.json에 추가
-
-    "data-root": "디렉토리명",   
+{
+    "exec-opts": ["native.cgroupdriver=systemd"],
+    "storage-driver": "overlay2",
+    "data-root": "/docker-volume",
     "storage-opts": [
       "overlay2.override_kernel_check=true",
       "overlay2.size=5G"
     ]
+}
 ```
-##### - grub 수정 및 리부트
+###### (2) GPU
 ```
-$ vi /etc/default/grub
-GRUB_CMDLINE_LINUX="crashkernel=auto rhgb quiet rootflags=pquota"
-(마지막에 rootflags=pquota 추가)
-
-$ systemctl daemon-reload
-$ grub2-mkconfig -o /boot/grub2/grub.cfg
-$ reboot
+{
+    "default-runtime": "nvidia",
+    "exec-opts": ["native.cgroupdriver=systemd"],
+    "data-root": "/docker-volume",
+    "storage-opts":[
+      "overlay2.override_kernel_check=true",
+      "overlay2.size=5G"
+    ],
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    }
+}
 ```
