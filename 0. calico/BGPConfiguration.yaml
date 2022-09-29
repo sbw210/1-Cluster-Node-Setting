@@ -4,9 +4,11 @@ metadata:
   name: default
 spec:
   logSeverityScreen: Info
-  nodeToNodeMeshEnabled: false
+  nodeToNodeMeshEnabled: true
   asNumber: 64512
   serviceClusterIPs:
   - cidr: 10.96.0.0/12
+  serviceExternalIPs:
+  - cidr: 103.249.28.128/28
   serviceLoadBalancerIPs:
   - cidr: 103.249.28.128/28
