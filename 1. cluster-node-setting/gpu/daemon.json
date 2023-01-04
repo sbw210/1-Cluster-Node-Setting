@@ -1,5 +1,5 @@
 {
-  "insecure-registries": ["ehost-repo.xyz"], 
+  "insecure-registries": ["bigbangcloud-repo.co.kr"], 
   "exec-opts": ["native.cgroupdriver=systemd"],
   "data-root": "/docker-volume",
   "storage-driver": "overlay2",
