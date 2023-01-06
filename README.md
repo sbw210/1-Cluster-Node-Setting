@@ -8,6 +8,11 @@
 ##### - gpu용 노드 라벨링
 ##### - docker volume의 root dir 설정 변경
 ---
+### * GPU 노드 특수 설정
+---
+##### - label 설정필요. (ex) gpu=3090 ,  role=gpu
+##### - taint 설정필요. (ex) role=gpu:NoSchedule
+---
 ### * Hide Process 
 ---
 ##### - 출저: https://github.com/gianlucaborello/libprocesshider
